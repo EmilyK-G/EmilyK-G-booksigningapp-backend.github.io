@@ -6,11 +6,6 @@ const cors = require("cors")
 const signatureRoutes = require('./routes/signatures')
 const userRoutes = require('./routes/user')
 
-// express app
-const app = express()
-
-//middleware
-app.use(express.json())
 
 //use CORS instead of proxi for production
 app.use(cors({ 
@@ -18,6 +13,12 @@ app.use(cors({
     credentials: true 
    }));
 
+   
+// express app
+const app = express()
+
+//middleware
+app.use(express.json())
 
 app.use((req, res, next)=>{
     console.log(req.path, req.method)
