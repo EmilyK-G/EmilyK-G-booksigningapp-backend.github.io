@@ -13,10 +13,12 @@ const app = express()
 app.use(express.json())
 
 //use CORS instead of proxi for production
-app.use(cors({ 
-    origin: "http://localhost:3000", //"https://booksigningclient.onrender.com",
-    credentials: true 
-   }));
+app.use(cors(
+//     { 
+//     origin: "http://localhost:3000", //"https://booksigningclient.onrender.com",
+//     credentials: true 
+//    }
+   ));
 
 
 app.use((req, res, next)=>{
