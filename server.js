@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require("cors")
 const signatureRoutes = require('./routes/signatures')
 const userRoutes = require('./routes/user')
 
@@ -10,6 +11,13 @@ const app = express()
 
 //middleware
 app.use(express.json())
+
+//use CORS instead of proxi for production
+app.use(cors({ 
+    origin: "https://booksigningclient.onrender.com", 
+    credentials: true 
+   }));
+
 
 app.use((req, res, next)=>{
     console.log(req.path, req.method)
