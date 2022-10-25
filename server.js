@@ -6,16 +6,14 @@ const cors = require("cors")
 const signatureRoutes = require('./routes/signatures')
 const userRoutes = require('./routes/user')
 
+// express app
+const app = express()
 
 //use CORS instead of proxi for production
 app.use(cors({ 
     origin: "http://localhost:3000", //"https://booksigningclient.onrender.com",
     credentials: true 
    }));
-
-   
-// express app
-const app = express()
 
 //middleware
 app.use(express.json())
