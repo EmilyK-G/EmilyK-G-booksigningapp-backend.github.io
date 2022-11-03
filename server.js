@@ -12,7 +12,8 @@ const app = express()
 //use CORS instead of proxi for production
 app.use(cors({ 
     origin: "https://booksigningclient.onrender.com",
-    credentials: true 
+    credentials: true,
+    optionsSuccessStatus: 200
    }));
 
 //middleware
